@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pokédex</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Pokédex</h1>
+
+    <div class="card">
+      <h2>Login</h2>
+      <input id="email" placeholder="Email">
+      <input id="password" type="password" placeholder="Password">
+      <button onclick="login()">Ingresar</button>
+    </div>
+
+    <div class="card">
+      <h2>Buscar Pokémon</h2>
+      <input id="pokemon" placeholder="Nombre del Pokémon">
+      <button onclick="buscarPokemon()">Buscar</button>
+    </div>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
