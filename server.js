@@ -3,16 +3,18 @@ const fetch = require("node-fetch");
 const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 const path = require("path");
+const cors = require("cors");
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
-
+app.use(cors());
 app.use(express.static(path.join(__dirname, "public")));
 
 const PORT = process.env.PORT || 3000;
 
+// --- LOGIN ---
 app.post("/api/v1/auth", (req, res) => {
   const { email, password } = req.body;
 
@@ -24,6 +26,7 @@ app.post("/api/v1/auth", (req, res) => {
   res.status(400).json({ error: "invalid credentials" });
 });
 
+// --- MIDDLEWARE DE AUTENTICACIÓN ---
 function authenticateToken(req, res, next) {
   const authHeader = req.headers["authorization"];
   if (!authHeader) return res.status(401).json({ error: "Token requerido" });
@@ -36,6 +39,7 @@ function authenticateToken(req, res, next) {
   });
 }
 
+// --- CONSULTA DE POKÉMON ---
 app.post("/api/v1/pokemonDetails", authenticateToken, async (req, res) => {
   const { pokemonName } = req.body;
 
@@ -52,10 +56,13 @@ app.post("/api/v1/pokemonDetails", authenticateToken, async (req, res) => {
 
     const data = await response.json();
 
+    // 🟢 Convertir peso a kilogramos
+    const pesoKg = (data.weight * 0.1).toFixed(1);
+
     res.status(200).json({
       name: data.name,
       species: data.species.name,
-      weight: data.weight,
+      weight: `${pesoKg} kg`, // Mostrar peso en kg
       img_url: data.sprites.front_default,
     });
   } catch (error) {
@@ -64,6 +71,7 @@ app.post("/api/v1/pokemonDetails", authenticateToken, async (req, res) => {
   }
 });
 
+// --- INICIO DEL SERVIDOR ---
 app.listen(PORT, () => {
   console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
 });
