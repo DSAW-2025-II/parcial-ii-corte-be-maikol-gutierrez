@@ -1,3 +1,11 @@
+- **Nombre completo:** Maikol Smit Gutierrez Bello 
+- **ID de la Universidad:** 0000339397
+- **Usuario de Github:** @Maikol23qq
+- **Link de mi Pokedex:** https://parcial-ii-corte-be-maikol-gutierrez.onrender.com
+
+
+
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/xXpI7QGh)
 # 📝 Enunciado del examen
 
 Vas a construir una **arquitectura de tres capas**:

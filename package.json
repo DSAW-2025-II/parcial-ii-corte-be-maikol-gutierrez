@@ -1,0 +1,31 @@
+{
+  "name": "parcial-ii-corte-be-maikol-gutierrez",
+  "version": "1.0.0",
+  "description": "Backend parcial II corte - Maikol Gutierrez",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DSAW-2025-II/parcial-ii-corte-be-maikol-gutierrez.git"
+  },
+  "keywords": [],
+  "author": "Maikol Gutierrez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DSAW-2025-II/parcial-ii-corte-be-maikol-gutierrez/issues"
+  },
+  "homepage": "https://github.com/DSAW-2025-II/parcial-ii-corte-be-maikol-gutierrez#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
